@@ -7,7 +7,7 @@ class CustomWidget extends StatelessWidget {
   final Map<String, dynamic>? customerData;
   final isAndroid = Platform.isAndroid;
 
-  CustomWidget({this.customerData});
+  CustomWidget({super.key, this.customerData});
 
   @override
   Widget build(BuildContext context) {
@@ -82,19 +82,19 @@ class CustomWidget extends StatelessWidget {
                           Text(
                             'Name: ${customerData?['First Name'] ?? ''} ${customerData?['Last Name'] ?? ''}',
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Text(
                             'Date of Birth: ${customerData?['Date of Birth'] ?? ''}',
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Text(
                             'Email: ${customerData?['Email'] ?? ''}',
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Text(
                             'Phone Number: ${customerData?['Phone Number'] ?? ''}',
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Text(
                             'Bank Account Number: ${customerData?['Bank Account Number'] ?? ''}',
                           ),

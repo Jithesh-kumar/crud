@@ -1,6 +1,7 @@
 import 'dart:io' show Platform;
 
 import 'package:crud_new/pages/display.dart';
+import 'package:crud_new/pages/view_cust.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -71,7 +72,7 @@ class _CreateCustomerState extends State<CreateCustomer> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => CustomWidget(customerData: customer),
+        builder: (context) => ViewCustomer(customerData: customer),
       ),
     );
   }

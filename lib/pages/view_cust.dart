@@ -1,11 +1,19 @@
-import 'package:crud_new/pages/create_cust.dart';
-import 'package:crud_new/pages/display.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:io' show Platform;
 
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:crud_new/pages/create_cust.dart';
+import 'package:crud_new/pages/display.dart';
+
 class ViewCustomer extends StatelessWidget {
-  const ViewCustomer({super.key});
+  final Map<String, dynamic>? customerData;
+
+  const ViewCustomer({
+    Key? key,
+    this.customerData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +81,8 @@ class ViewCustomer extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => CreateCustomer()));
+                                  builder: (context) =>
+                                      const CreateCustomer()));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor:
@@ -131,7 +140,9 @@ class ViewCustomer extends StatelessWidget {
               ],
             ),
           ),
-          CustomWidget(),
+          CustomWidget(
+            customerData: customerData,
+          ),
         ],
       ),
     );
